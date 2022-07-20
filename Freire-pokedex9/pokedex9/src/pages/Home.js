@@ -8,18 +8,20 @@ import { useNavigate } from "react-router-dom";
 import { CardPokemon } from "../Components/CardPokemon";
 import { Detalhes } from "../pages/Detalhes";
 import { Card } from "../Components/CardPokemon";
+import {Logo} from "../Components/Header";
 
 
 export const MainContainer = styled.div`
-background-color:#1C2B59;
-flex-wrap: wrap; 
-min-height: 100vh;
-height: max-content; 
-padding-top:0; 
-padding-bottom: 10%;
+background-color:#2a3760;
+
+
 
 `
-const Container = styled.div`
+const CardBug = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
 `
 export const Home = () => {
     const navigate = useNavigate();
@@ -59,10 +61,11 @@ export const Home = () => {
     return (
         <MainContainer>
             <Header></Header>
-            <Container>
-                <Card>{mapearPokemons}</Card>
-            </Container>
+
+            <CardBug>{mapearPokemons}</CardBug>
+
         </MainContainer>
+
 
 
     )
