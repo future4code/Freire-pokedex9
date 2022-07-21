@@ -1,30 +1,28 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
-import irParaPokedex from "../Routes/Coordinator";
-import voltarPagina from "../Routes/Coordinator";
-import {Header} from "../Components/Header";
+import { voltarPagina } from "../Routes/Coordinator";
+import { Header } from "../Components/Header";
+import { CardDetalhes } from "../Components/CardDetalhes";
+import { useNavigate } from "react-router-dom";
 
-const MainContainer = styled.div`
-background-color:#1C2B59;
-flex-wrap: wrap; 
-min-height: 100vh;
-height: max-content; 
-padding-top: 0; 
-padding-bottom: 10%;
+
+
+export const MainContainer = styled.div`
+background-color:#2a3760;
 
 `
-const Container = styled.div`
-`
 
 
-export const Detalhes = () =>{
-    return(
+export const Detalhes = () => {
+    const navigate = useNavigate()
+    return (
         <MainContainer>
-        <Header></Header>
-        <Container></Container>
+
+            <Header />
+            <CardDetalhes />
+
         </MainContainer>
 
-        
     )
 }
