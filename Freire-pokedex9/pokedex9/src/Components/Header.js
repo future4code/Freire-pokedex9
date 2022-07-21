@@ -24,7 +24,7 @@ border-radius:35px;
 display: inline-block;
 text-align:center;
 transition: all 0.5s;
-    cursor: pointer;
+cursor: pointer;
 
 
     &:hover{
@@ -33,16 +33,31 @@ transition: all 0.5s;
 }
 `
 
+const Logo = styled.div `
+
+text-align: center;
+img {
+    max-width:45vh;
+    min-width:25vh;
+    height: 100px;
+    padding-top: 30px;
+  }
+
+`
 
 export const Header = () => {
     const navigate = useNavigate();
     return (
         <div>
             <HeaderStyled>
-                <img src="https://assets.pokemon.com/assets/cms2-pt-br/img/misc/gus/buttons/logo-pokemon-79x45.png" alt="pokemon-image"></img>
+        
                 <Button onClick={() => irParaPokedex(navigate)}>Pokedéx</Button>
-                
-                
+                <Logo>
+                <img src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo-4-1.png" alt="pokemon-image"></img>
+                </Logo>
+                <Button onClick={() => voltarPagina(navigate)}> Voltar </Button>
+
+
             </HeaderStyled>
         </div>
     )
