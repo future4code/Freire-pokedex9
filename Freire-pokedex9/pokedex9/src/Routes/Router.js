@@ -6,21 +6,21 @@ import React,{useState} from "react";
 
 export const Router = () => {
 
-    const [addPokedex,setAddPokedex] = useState([])
+    const [pokemonsPokedex,setPokemonsPokedex] = useState([])
 
     const adicionarAPokedex = (pokemon) =>{
-        const arrayDePokemons = [...addPokedex,pokemon]
-        setAddPokedex(arrayDePokemons)
+        const arrayDePokemons = [...pokemonsPokedex,pokemon]
+        setPokemonsPokedex(arrayDePokemons)
         alert('Gotchaaa! Pokemón capturado e adicionado a sua pokedéx!')
     }
 
     const removerDaPokedex = (nome) =>{
         const remover = window.confirm ("Remover pokemón?")
         if (removerDaPokedex){
-            const arrayDePokemons = addPokedex.filter((pokemon)=>{
+            const arrayDePokemons = pokemonsPokedex.filter((pokemon)=>{
                 return pokemon !== nome
             })
-            setAddPokedex(arrayDePokemons)
+            setPokemonsPokedex(arrayDePokemons)
         }
     }
 
@@ -28,8 +28,8 @@ export const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route index element={<Home />} />
-                <Route path="pokedex" element={<Pokedex />} />
+                <Route index element={<Home adicionarAPokedex={adicionarAPokedex}/>} />
+                <Route path="pokedex" element={<Pokedex pokemonsPokedex={pokemonsPokedex} removerDaPokedex={removerDaPokedex} />} />
                 <Route path="/detalhes/:name" element={<Detalhes />} />
 
             </Routes>
