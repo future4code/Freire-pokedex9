@@ -23,7 +23,7 @@ const CardBug = styled.div`
   gap: 12px;
   justify-content: space-between;
 `
-export const Home = () => {
+export const Home = (props) => {
     const navigate = useNavigate();
     const [listaDePokemons, setListaDePokemons] = useState([]);
     const pegarNomesPokemons = () => {
@@ -46,7 +46,7 @@ export const Home = () => {
         listaDePokemons.map((pokemon) => {
             return (
                 <>
-                    <CardPokemon adicionarAPokedex={pegarNomesPokemons.adicionarAPokedex} nome={pokemon.name} />
+                    <CardPokemon adicionarAPokedex={props.adicionarAPokedex} nome={pokemon.name} />
                 </>
             )
         })

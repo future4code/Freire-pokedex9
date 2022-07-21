@@ -112,7 +112,7 @@ export const CardPokemon = (props) => {
                     <p>HP:<span> {pokemon.stats && <>{pokemon.stats[0].base_stat}</>}</span></p>
                 </Stats>
                 <Buttons>
-                    <button onClick={() => props.adicionarAPokedex(pokemon.name)}>Add to pokedéx</button>
+                    <button onClick={() =>props.adicionarAPokedex(pokemon.name)}>Add to pokedéx</button>
                     <button onClick={() => irParaDetalhes(navigate, pokemon.name)}>Details</button>
                 </Buttons>
             </Card>
